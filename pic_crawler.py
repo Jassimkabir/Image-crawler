@@ -22,7 +22,6 @@ def image_download(img_url):
     soup=BeautifulSoup(r.content, features="html.parser")
     image_div=soup.find("img",{"class":"AssetCard-module__image___dams4"})
     x= image_div['src']
-    print(x, "\n")
     return x
 
 def main():
@@ -30,7 +29,6 @@ def main():
     base_link="https://www.gettyimages.in"
     for link in picture:
         wget.download(image_download(base_link+link))
-
 
 if __name__ == "__main__":
     main()
